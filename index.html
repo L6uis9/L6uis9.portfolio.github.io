@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Bienvenue sur mon Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#" class="tablink" onclick="openTab(event, 'presentation')">Présentation</a></li>
+                <li><a href="#" class="tablink" onclick="openTab(event, 'skills')">Compétences</a></li>
+                <li><a href="#" class="tablink" onclick="openTab(event, 'interests')">Centres d'intérêt</a></li>
+                <li><a href="#" class="tablink" onclick="openTab(event, 'contact')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="presentation" class="tabcontent">
+        <h2>Présentation</h2>
+        <p>Je suis [Ton Nom], passionné par la technologie et le développement web. J'ai un parcours diversifié qui m'a permis de maîtriser plusieurs compétences techniques.</p>
+    </section>
+
+    <section id="skills" class="tabcontent" style="display:none">
+        <h2>Compétences</h2>
+        <ul>
+            <li>HTML/CSS</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>Git/GitHub</li>
+            <li>Frameworks : React, Vue.js</li>
+        </ul>
+    </section>
+
+    <section id="interests" class="tabcontent" style="display:none">
+        <h2>Centres d'intérêt</h2>
+        <p>Mes centres d'intérêt incluent la programmation, les voyages, la musique et la lecture.</p>
+    </section>
+
+    <section id="contact" class="tabcontent" style="display:none">
+        <h2>Contact</h2>
+        <p>Tu peux me contacter à : <a href="mailto:exemple@mail.com">exemple@mail.com</a></p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
