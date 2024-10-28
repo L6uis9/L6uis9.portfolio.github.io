@@ -1,0 +1,250 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Space Grotesk';           /* Nom de la police que vous utiliserez */
+    src: url('fonts/SpaceGrotesk.ttf') format('truetype');
+    font-weight: normal;                    /* Poids, ajustable si besoin */
+    font-style: normal;                     /* Style normal */
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem; /* Base font-size of 16px */
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    padding: 0.625rem; /* 10px */
+}
+
+nav ul li {
+    list-style: none;
+	text-align: center;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+section {
+    padding-left: 2.5rem; /* 40px */
+	padding-right: 2.5rem; /* 40px */
+    margin-left: 1.25rem; /* 20px */
+	margin-right: 1.25rem; /* 20px */
+}
+
+/* Welcome Section */
+.welcome-content {
+    display: flex;
+	justify-content: center; /* Centre horizontalement */
+    align-items: center;     /* Centre verticalement */
+    gap: 1.25rem; /* 20px */
+}
+
+.profile-pic {
+    width: 9.375rem; /* 150px */
+    height: 9.375rem; /* 150px */
+    border-radius: 50%;
+}
+
+.intro-text {
+    max-width: 37.5rem; /* 600px */
+	
+}
+
+/* Engineering Course */
+.semester-courses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem; /* 20px */
+}
+
+.semester {
+    background: #f4f4f4;
+    padding: 1.25rem; /* 20px */
+    border-radius: 0.5rem; /* 8px */
+    width: calc(50% - 1.25rem); /* Adjust width for gap */
+}
+
+/* International Mobility */
+.mobility-content .travel-item,
+.mobility-content .planned-travels {
+    margin-bottom: 1.25rem; /* 20px */
+}
+
+/* Sustainability & Civic Engagement */
+.engagement-content .engagement-item {
+    margin-bottom: 1.25rem; /* 20px */
+}
+
+/* Sport & Other Activities */
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.625rem; /* 10px */
+}
+
+.activity-box {
+    width: 100%;
+    padding-bottom: 100%;
+    position: relative;
+}
+
+.activity-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem; /* 8px */
+}
+
+/* Career Development */
+.career-content {
+    display: flex;
+    gap: 2rem; /* 20px */
+    flex-wrap: wrap;
+}
+
+.cv-section,
+.video-section {
+    flex: 1 1 38rem;
+	margin : 0;
+	padding : 0;
+}
+
+/* Responsive Design */
+@media (max-width: 48rem) { /* 768px */
+    nav ul {
+        flex-direction: column;
+    }
+
+    .welcome-content,
+    .semester-courses,
+    .career-content {
+        flex-direction: column;
+    }
+
+    .semester {
+        width: 100%;
+    }
+
+    .activities-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+h1 {
+    text-align: center;
+	padding: 2rem;
+	font-size: 2.5rem;
+}
+
+.cv-container {
+    display: flex;
+    border-left: 0.3125rem solid #3498db; /* 5px à rem */
+	padding : 0;
+    
+    margin-top: 1.25rem ; /* 20px à rem */
+    background-color: #f9f9f9; /* Couleur de fond */
+	
+}
+
+.cv-header {
+    display: flex;
+    flex-direction: column; /* Aligne les éléments verticalement */
+    align-items: center; /* Centre le contenu horizontalement */
+    padding-left: 1rem;
+	padding-right: 1rem;
+	background-color: #97d4dc;
+}
+
+.cv-photo {
+    width: 6.25rem; /* 100px à rem */
+    height: 6.25rem; /* 100px à rem */
+    border-radius: 50%; /* Arrondir la photo */
+    overflow: hidden; /* Masquer les débordements */
+    margin-bottom: 1rem; /* Espace entre la photo et les infos */
+	margin-top: 1rem;
+}
+
+.cv-photo img {
+    width: 100%; /* Ajuster l'image à la taille du conteneur */
+    height: auto; /* Garder les proportions de l'image */
+    object-fit: cover; /* Couvrir le conteneur tout en gardant les proportions */
+}
+
+.cv-info h1 {
+    margin: 0;
+    font-size: 1.125rem; /* 18px à rem */
+    text-align: center; /* Centrer le texte */
+	padding: 0;
+	
+	
+}
+
+.cv-info p {
+    margin: 0.3125rem 0; /* 5px à rem */
+    text-align: center; /* Centrer le texte */
+
+}
+
+.cv-content {
+	
+    margin-top: 1.25rem; /* 20px à rem */
+	padding-left : 2rem;
+	padding-right : 2rem;
+	flex : 1;
+	
+}
+
+.cv-content h2 {
+    border-bottom: 0.125rem solid #3498db; /* 2px à rem */
+    padding-bottom: 0.3125rem; /* 5px à rem */
+	
+}
+
+.cv-content ul {
+    list-style-type: none; /* Supprimer les puces de la liste */
+    padding: 0; /* Enlever le padding */
+}
+
+.cv-content li {
+    margin-bottom: 0.9375rem; /* 15px à rem */
+}
+
+.hidden {
+    display: none;
+}
+
+.toggle-button {
+    margin-left: 1rem; /* Espacement à gauche du bouton */
+    padding: 0.5rem 1rem; /* Espacement intérieur */
+    background-color: #007bff; /* Couleur d'arrière-plan du bouton */
+    color: white; /* Couleur du texte */
+    border: none; /* Supprime la bordure par défaut */
+    border-radius: 5px; /* Arrondir les coins */
+    cursor: pointer; /* Change le curseur au survol */
+	vertical-align: middle; /* Aligne verticalement le bouton */
+    line-height: normal; /* Assure une hauteur de ligne normale */
+    font-size: 1rem; /* Taille de police */
+}
+
+.toggle-button:hover {
+    background-color: #0056b3; /* Couleur au survol */
+}
+
+.cv-section h2 {
+    display: flex; /* Utilise Flexbox */
+    justify-content: space-between; /* Espace entre les éléments, bouton à droite */
+    align-items: center; /* Centre verticalement le contenu */
+}
