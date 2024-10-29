@@ -17,6 +17,8 @@ body {
     font-size: 1rem; /* Base font-size of 16px */
 }
 
+
+
 nav ul {
     display: flex;
     justify-content: space-around;
@@ -151,36 +153,67 @@ h1 {
 
 .cv-container {
     display: flex;
-    border-left: 0.3125rem solid #3498db; /* 5px à rem */
-	padding : 0;
-    
-    margin-top: 1.25rem ; /* 20px à rem */
-    background-color: #f9f9f9; /* Couleur de fond */
-	
+    border-left: 0.3125rem solid #3498db;
+    padding: 0;
+    margin-top: 1.25rem;
+	margin-bottom: 1.25rem;
+    background-color: #f9f9f9;
+    max-width: 100%; /* Limite la largeur à 100% de l'écran */
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si besoin */
 }
 
 .cv-header {
     display: flex;
-    flex-direction: column; /* Aligne les éléments verticalement */
-    align-items: center; /* Centre le contenu horizontalement */
-    padding-left: 1rem;
-	padding-right: 1rem;
-	background-color: #97d4dc;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color: #97d4dc;
+    width: 100%; /* Ajuste la largeur au conteneur */
+    max-width: 100%;
 }
 
 .cv-photo {
     width: 6.25rem; /* 100px à rem */
-    height: 6.25rem; /* 100px à rem */
-    border-radius: 50%; /* Arrondir la photo */
-    overflow: hidden; /* Masquer les débordements */
-    margin-bottom: 1rem; /* Espace entre la photo et les infos */
-	margin-top: 1rem;
+    height: 6.25rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 .cv-photo img {
-    width: 100%; /* Ajuster l'image à la taille du conteneur */
-    height: auto; /* Garder les proportions de l'image */
-    object-fit: cover; /* Couvrir le conteneur tout en gardant les proportions */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.cv-content {
+    margin-top: 1.25rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    flex: 1;
+    width: 100%;
+}
+
+@media (max-width: 48rem) { /* Pour les écrans en dessous de 768px */
+    .cv-container {
+        flex-direction: column; /* Arrange les éléments verticalement */
+        padding: 1rem; /* Réduit le padding sur mobile */
+    }
+
+    .cv-header, .cv-content {
+        padding: 1rem;
+        width: 100%; /* Occupe toute la largeur disponible */
+    }
+
+    .cv-content h2 {
+        font-size: 1.25rem; /* Taille réduite pour les petits écrans */
+    }
+
+    .toggle-button {
+        font-size: 0.875rem; /* Ajuste la taille du texte pour mobile */
+        padding: 0.5rem 0.75rem; /* Rend le bouton plus compact */
+    }
 }
 
 .cv-info h1 {
@@ -198,14 +231,6 @@ h1 {
 
 }
 
-.cv-content {
-	
-    margin-top: 1.25rem; /* 20px à rem */
-	padding-left : 2rem;
-	padding-right : 2rem;
-	flex : 1;
-	
-}
 
 .cv-content h2 {
     border-bottom: 0.125rem solid #3498db; /* 2px à rem */
@@ -248,3 +273,4 @@ h1 {
     justify-content: space-between; /* Espace entre les éléments, bouton à droite */
     align-items: center; /* Centre verticalement le contenu */
 }
+
