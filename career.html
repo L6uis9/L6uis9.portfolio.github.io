@@ -23,6 +23,7 @@
         <div class="career-content">
             <div class="cv-section">
                 <h2>My CV 
+					<button id="download-btn">Télécharger le CV en PDF</button>
                     <button class="toggle-button" id="language-toggle" onclick="toggleLanguage()">See English Version</button>
                 </h2>
 
@@ -149,5 +150,25 @@
             isEnglish = !isEnglish;
         }
     </script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+	<script>
+    document.getElementById("download-btn").addEventListener("click", function () {
+        // Sélectionne l'élément contenant le CV
+        const cvContent = document.getElementById("cv-container");
+
+        // Options de configuration pour le PDF
+        const options = {
+            margin:       0.5,
+            filename:     'Mon_CV.pdf',
+            image:        { type: 'jpeg', quality: 0.98 },
+            html2canvas:  { scale: 2 },
+            jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+        };
+
+        // Utilise html2pdf pour convertir et télécharger
+        html2pdf().set(options).from(cvContent).save();
+    });
+</script>
+
 </body>
 </html>
