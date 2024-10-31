@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+}
+
 @font-face {
     font-family: 'Space Grotesk';           /* Nom de la police que vous utiliserez */
     src: url('fonts/SpaceGrotesk.ttf') format('truetype');
@@ -15,6 +19,8 @@
 body {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1rem; /* Base font-size of 16px */
+	display: flex;
+    flex-direction: column;
 }
 
 
@@ -44,29 +50,123 @@ section {
 }
 
 /* Welcome Section */
-.welcome-content {
+#welcome {
     display: flex;
-	justify-content: center; /* Centre horizontalement */
-    align-items: center;     /* Centre verticalement */
-    gap: 1.25rem; /* 20px */
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; /* Réduit à 80% de la hauteur de la page */
+    padding: 3.125rem 0; /* 50px -> 3.125rem */
+    
+}
+
+.intro-container {
+    display: flex;
+    max-width: 62.5rem; /* 1000px -> 62.5rem */
+    gap: 3.125rem; /* 50px -> 3.125rem */
+    align-items: center;	
+	padding : 1rem;
+	
+	
+}
+
+/* Profile Card */
+.profile-card {
+    background-color: #97d4dc;
+    padding: 1.875rem; 
+    border-radius: 0.5rem;
+    text-align: center;
+    width: 18.75rem; 
+	padding-bottom : 1rem;
 }
 
 .profile-pic {
-    width: 9.375rem; /* 150px */
-    height: 9.375rem; /* 150px */
+    width: 9.375rem;
+    height: 9.375rem; 
     border-radius: 50%;
+    margin-bottom: 1.25rem;
 }
 
-.intro-text {
-    max-width: 37.5rem; /* 600px */
+.profile-card h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    padding: 0;
+}
+
+.job-title {
+    font-weight: bold;
+    margin: 0.625rem 0;
+}
+
+.education {
+    font-size: 0.875rem;
+    color: #555;
+}
+
+.linkedin-icon {
+    width: 1.5rem; 
+    height: 1.5rem;
+    margin-top: 0.9375rem;
+}
+
+.icon {
+    width: 16px; /* ajustez la taille selon vos besoins */
+    height: 16px;
+    vertical-align: middle; /* aligne l'icône avec le texte */
+    margin-right: 5px; /* espace entre l'icône et l'adresse email */
+}
+
+@media (max-width: 48rem) { /* 768px */
+	.intro-container {
+		flex-direction : column;
+		gap: 1rem; /* 50px -> 3.125rem */
+		
+	}
+	#welcome {
+		min-height: 95vh; /* Réduit à 80% de la hauteur de la page */
+		padding : 0;
+	}
+}
+
+/* Intro Text */
+.intro-text h2 {
+    font-size: 2.25rem; 
+    color: #333;
+    margin-bottom: 0.9375rem; 
+}
+
+.intro-text p {
+    font-size: 1.125rem; 
+    color: #333;
+    line-height: 1.5;
+    max-width: 31.25rem; 
+}
+
+/* Buttons */
+.btn {
+    padding: 0.625rem 1.25rem;
+    font-size: 1rem; 
+    border: none;
+    border-radius: 0.3125rem; 
+    margin-top: 1.25rem;
+    cursor: pointer;
 	
 }
+
+.cv-btn {
+    background-color: #207567;
+    color: white;
+}
+
+
 
 /* Engineering Course */
 .semester-courses {
     display: flex;
+	flex-direction : column;
     flex-wrap: wrap;
     gap: 1.25rem; /* 20px */
+	justify-content: center;
+    align-items: center;
 }
 
 .semester {
@@ -74,6 +174,16 @@ section {
     padding: 1.25rem; /* 20px */
     border-radius: 0.5rem; /* 8px */
     width: calc(50% - 1.25rem); /* Adjust width for gap */
+}
+
+.semester h2{
+	padding-bottom : 0.5rem;
+}
+.semester-content {
+	display: flex; /* Ajout de display: flex pour activer le centrage */
+    flex-direction: column; /* Aligner les éléments verticalement */
+    justify-content: center;
+    align-items: center;
 }
 
 /* International Mobility */
@@ -91,13 +201,16 @@ section {
 .activities-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.625rem; /* 10px */
+    gap: 1.5rem; /* 10px */
+    margin-bottom: 1.25rem; /* 20px */
 }
 
 .activity-box {
     width: 100%;
-    padding-bottom: 100%;
-    position: relative;
+    padding-bottom: 25%; /* Ajustez le pourcentage pour modifier le ratio d'aspect */
+    position: relative; /* Nécessaire pour positionner le titre sur l'image */
+    max-height: 200px; /* Limitez la hauteur maximale */
+    overflow: hidden; /* Empêche le débordement du contenu */
 }
 
 .activity-box img {
@@ -106,14 +219,35 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Cela gardera les proportions de l'image */
     border-radius: 0.5rem; /* 8px */
 }
+
+.image-title {
+    position: absolute; /* Position absolue par rapport à .activity-box */
+   
+    color: white; /* Couleur du texte */
+    font-size: 20px; /* Taille du texte */
+	background: linear-gradient(to bottom right, rgba(128, 128, 128, 0.8), rgba(128, 128, 128, 0.5) 50%, rgba(128, 128, 128, 0.3) 70%, rgba(128, 128, 128, 0) 100%); 
+    padding: 5px 10px; /* Espace autour du texte */
+    border-top-left-radius: 5px; /* Coins arrondis */
+    z-index: 2; /* S'assurer que le titre est au-dessus de l'image */
+}
+
+@media (max-width: 1400px) { /* 768px */
+    .activities-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1.5rem; /* 10px */
+        margin-bottom: 1.25rem; /* 20px */
+    }
+}
+
 
 /* Career Development */
 .career-content {
     display: flex;
-    gap: 2rem; /* 20px */
+    gap: 3rem; /* 20px */
     flex-wrap: wrap;
 }
 
@@ -182,7 +316,7 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem;
+    padding: 0.5rem;
     background-color: #97d4dc;
     width: 15rem; /* Largeur fixe pour la section de gauche */
 }
@@ -203,6 +337,11 @@ h1 {
     overflow: hidden;
     margin-bottom: 1rem;
     margin-top: 1rem;
+}
+.qrcode {
+    width: 6.25rem; /* 100px à rem */
+    height: 6.25rem;
+
 }
 
 .cv-photo img {
@@ -232,6 +371,12 @@ h1 {
         font-size: 0.875rem; /* Ajuste la taille du texte pour mobile */
         padding: 0.5rem 0.75rem; /* Rend le bouton plus compact */
     }
+	
+	.career-content {
+    display: flex;
+    gap: 2rem; /* 20px */
+    flex-wrap: wrap;
+}
 }
 
 .cv-info h1 {
@@ -243,14 +388,28 @@ h1 {
 	
 }
 
+.coding-skills h2, .language-skills h2{
+	margin: 0;
+    font-size: 1rem; /* 18px à rem */
+    text-align: center; /* Centrer le texte */
+	padding: 0.5rem;
+}
+
+.cv-info h2 {
+    margin: 0;
+    font-size: 0.8rem; /* 18px à rem */
+    text-align: center; /* Centrer le texte */
+	padding: 0.5rem;
+}
+
 .cv-info p {
     margin: 0.3125rem 0; /* 5px à rem */
     text-align: center; /* Centrer le texte */
-
+	font-size: 0.8rem;
 }
 
 
-.cv-content h2 {
+.coding-skills h2, .language-skills h2, .cv-content h2 {
     border-bottom: 0.125rem solid #3498db; /* 2px à rem */
     padding-bottom: 0.3125rem; /* 5px à rem */
 	
@@ -262,7 +421,7 @@ h1 {
 }
 
 .cv-content li {
-    margin-bottom: 0.9375rem; /* 15px à rem */
+    margin-top: 0.3rem; /* 15px à rem */
 }
 
 .hidden {
@@ -292,3 +451,124 @@ h1 {
     align-items: center; /* Centre verticalement le contenu */
 }
 
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    .cv-container {
+        width: 100%;
+    }
+}
+
+
+/* Compétences en langues */
+.coding-skills, .language-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Espacement entre les langues */
+    width: 100%;
+}
+
+.language {
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+    display: flex;
+    justify-content: space-between; /* Place le nom de la langue à gauche et les cercles à droite */
+    align-items: center;
+}
+
+.language span {
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+
+.level {
+    display: flex;
+    gap: 0.25rem; /* Espace entre les cercles */
+}
+
+.circle {
+    width: 0.625rem; /* 10px */
+    height: 0.625rem;
+    border-radius: 50%;
+    background-color: #ddd; /* Couleur des cercles non remplis */
+}
+
+.circle.filled {
+    background-color: #3498db; /* Couleur des cercles remplis */
+}
+
+.language-note {
+    font-size: 0.75rem; /* Taille plus petite pour la note */
+    color: #555; /* Couleur plus douce */
+    display: block; /* Pour que la note soit sur une nouvelle ligne */
+    text-align: right; /* Aligne le texte à droite sous les cercles */
+}
+
+.video-container {
+	margin-top: 1.45rem; /* Ajuste la valeur selon l'espace souhaité */
+	margin-bottom: 1.45rem; /* Ajuste la valeur selon l'espace souhaité */
+    position: relative;
+    width: 100%;       /* Prend toute la largeur du conteneur parent */
+    padding-bottom: 56.25%; /* Ratio 16:9, soit 9/16 = 0.5625 ou 56.25% */
+    height: 0;         /* Sert de base pour le ratio */
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;       /* La vidéo prend toute la largeur du conteneur */
+    height: 100%;      /* La hauteur est calculée automatiquement selon le ratio */
+}
+
+
+
+footer {
+    background-color: #f8f8f8;
+    padding: 1.25rem; /* 20px -> 1.25rem */
+    border-top: 0.0625rem solid #e0e0e0; /* 1px -> 0.0625rem */
+    font-size: 0.875rem; /* 14px -> 0.875rem */
+	margin-bottom: 0;
+	margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Peut être changé à 'center' ou 'flex-start' si besoin */
+    align-items: center; /* Centre verticalement */
+    max-width: 75rem; /* 1200px -> 75rem */
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 9.375rem; /* 150px -> 9.375rem */
+    margin: 0.625rem; /* 10px -> 0.625rem */
+    display: flex; /* Utiliser flexbox pour centrer le contenu */
+    flex-direction: column; /* Organiser le contenu en colonne */
+    align-items: center; /* Centre horizontalement */
+    text-align: center; /* Centre le texte */
+}
+
+.footer-section p {
+    margin: 0.3125rem 0; /* 5px -> 0.3125rem */
+}
+
+.footer-section a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.linkedin-icon-footer {
+    width: 1.5rem; 
+    height: 1.5rem;
+}
