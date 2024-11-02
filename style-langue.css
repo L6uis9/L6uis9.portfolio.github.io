@@ -1,0 +1,230 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+@font-face {
+    font-family: 'Space Grotesk';           /* Nom de la police que vous utiliserez */
+    src: url('fonts/SpaceGrotesk.ttf') format('truetype');
+    font-weight: normal;                    /* Poids, ajustable si besoin */
+    font-style: normal;                     /* Style normal */
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem; /* Base font-size of 16px */
+	display: flex;
+    flex-direction: column;
+}
+
+.icon {
+    width: 16px; /* ajustez la taille selon vos besoins */
+    height: 16px;
+    vertical-align: middle; /* aligne l'icône avec le texte */
+    margin-right: 5px; /* espace entre l'icône et l'adresse email */
+}
+
+/* Career Development */
+#career{
+	padding : 0;
+}
+
+.cv-section {
+    flex: 1 1 38rem;
+	margin : 0;
+	padding : 0;
+}
+
+/* Responsive Design */
+@media (max-width: 48rem) { /* 768px */
+   
+    .career-content {
+        flex-direction: column;
+    }
+}
+
+.cv-container {
+    display: flex;
+    border-left: 0.3125rem solid #3498db;
+    padding: 0;
+
+    background-color: #f9f9f9;
+    max-width: 100%;
+}
+
+.cv-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: #97d4dc;
+    width: 15rem; /* Largeur fixe pour la section de gauche */
+}
+
+.cv-content {
+    margin-top: 0;
+    padding-left: 2rem;
+    padding-right: 2rem;
+	padding-top: 1rem;
+    padding-bottom: 1rem;
+    flex: 1; /* Occupe tout l'espace restant */
+    width: auto; /* Prend la largeur disponible */
+}
+.cv-photo {
+    width: 6.25rem; /* 100px à rem */
+    height: 6.25rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+.qrcode {
+    width: 6.25rem; /* 100px à rem */
+    height: 6.25rem;
+
+}
+
+.cv-photo img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+
+@media (max-width: 48rem) { /* Pour les écrans en dessous de 768px */
+    .cv-container {
+        flex-direction: column; /* Arrange les éléments verticalement */
+        
+    }
+
+    .cv-header, .cv-content {
+        
+        width: 100%; /* Occupe toute la largeur disponible */
+    }
+
+    .cv-content h2 {
+        font-size: 1.25rem; /* Taille réduite pour les petits écrans */
+    }
+
+    .toggle-button {
+        font-size: 0.875rem; /* Ajuste la taille du texte pour mobile */
+        padding: 0.5rem 0.75rem; /* Rend le bouton plus compact */
+    }
+	
+	.career-content {
+    display: flex;
+    gap: 2rem; /* 20px */
+    flex-wrap: wrap;
+}
+}
+
+.cv-info h1 {
+    margin: 0;
+    font-size: 1.125rem; /* 18px à rem */
+    text-align: center; /* Centrer le texte */
+	padding: 0;
+	
+	
+}
+
+.coding-skills h2, .language-skills h2{
+	margin: 0;
+    font-size: 1rem; /* 18px à rem */
+    text-align: center; /* Centrer le texte */
+	padding: 0.5rem;
+}
+
+.cv-info h2 {
+    margin: 0;
+    font-size: 0.8rem; /* 18px à rem */
+    text-align: center; /* Centrer le texte */
+	padding: 0.5rem;
+}
+
+.cv-info p {
+    margin: 0.3125rem 0; /* 5px à rem */
+    text-align: center; /* Centrer le texte */
+	font-size: 0.8rem;
+}
+
+
+.coding-skills h2, .language-skills h2, .cv-content h2 {
+    border-bottom: 0.125rem solid #3498db; /* 2px à rem */
+    padding-bottom: 0.3125rem; /* 5px à rem */
+	
+}
+
+.cv-content ul {
+    list-style-type: none; /* Supprimer les puces de la liste */
+    padding: 0; /* Enlever le padding */
+}
+
+.cv-content li {
+    margin-top: 0.3rem; /* 15px à rem */
+}
+
+.cv-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    .cv-container {
+        width: 100%;
+    }
+}
+
+.coding-skills, .language-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Espacement entre les langues */
+    width: 100%;
+}
+
+.language {
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+    display: flex;
+    justify-content: space-between; /* Place le nom de la langue à gauche et les cercles à droite */
+    align-items: center;
+}
+
+.language span {
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+
+.level {
+    display: flex;
+    gap: 0.25rem; /* Espace entre les cercles */
+}
+
+.circle {
+    width: 0.625rem; /* 10px */
+    height: 0.625rem;
+    border-radius: 50%;
+    background-color: #ddd; /* Couleur des cercles non remplis */
+}
+
+.circle.filled {
+    background-color: #3498db; /* Couleur des cercles remplis */
+}
+
+.language-note {
+    font-size: 0.75rem; /* Taille plus petite pour la note */
+    color: #555; /* Couleur plus douce */
+    display: block; /* Pour que la note soit sur une nouvelle ligne */
+    text-align: right; /* Aligne le texte à droite sous les cercles */
+}
