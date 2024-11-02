@@ -22,8 +22,12 @@
         <h1>Career Development</h1>
         <div class="career-content">
             <div class="cv-section">
-                <h2>My CV 
-                    <button class="toggle-button" id="language-toggle" onclick="toggleLanguage()">See English Version</button>
+                <h2 class="cv-title">
+					My CV
+                    <div class="button-container">
+						<button class="toggle-button" id="language-toggle" onclick="toggleLanguage()">See English Version</button>
+						<button class="download-button" id="download-button" onclick="downloadCV()">Télécharger le CV</button>
+					</div>
                 </h2>
 
                 <div class="cv-container">
@@ -38,7 +42,11 @@
 							<p><img src="pictures/at-icon.png" alt="@" class="icon">louisdavid.duman@etu.inp-n7.fr</p>
 							<p><img src="pictures/phone-icon.png" alt="phone" class="icon">+33 7 69 40 65 71</p>
 							<p><img src="pictures/location-icon.png" alt="location" class="icon">Toulouse, France</p>
-							<p><img src="pictures/qrcode.jpeg" class ="qrcode" alt="QR Code" width="150" height="150"></p>
+							<p>
+								<a href="https://www.linkedin.com/in/louis-david-duman-0041172b9/" target="_blank">
+								<img src="pictures/qrcode.png" class ="qrcode" alt="QR Code" width="150" height="150">
+								</a>
+							</p>
 						</div>
 							
 
@@ -89,7 +97,7 @@
 					</div>
 					<br>
 					<div class="coding-skills">
-						<h2>Langages</h2>
+						<h2>Langages informatiques</h2>
 								<div class="language">
 								<span>C</span>
 								<div class="level">
@@ -101,7 +109,7 @@
 							</div>
 						</div>
 						<div class="language">
-							<span>Ocaml</span>
+							<span>OCaml</span>
 							<div class="level">
 								<div class="circle filled"></div>
 								<div class="circle filled"></div>
@@ -163,23 +171,24 @@
 					</div>
                     </div>
                     <div class="cv-content" id="cv-content-fr">
-						<h2>Qui Suis-Je ?</h2>
+						
                         <ul>
                             <li>
-                                <p>blablablablablablablablablablablablablabla blablablablablablabla</p>
+                                <p>Actuellement étudiant en informatique à l'ENSEEIHT, je suis à la recherche d'un stage pour découvrir le métier de developpeur informatique afin de développer les compétences que j'ai acquises pendant mes études. </p>
                             </li>
                         </ul>
 						<br>
                         <h2>Stages et Expérience Professionnelle</h2>
                         <ul>
-                            <li>
-                                <h3>Stage d'Observation - LCC CNRS, Toulouse</h3>
-                                <p>oct. 2018</p>
-                                <p>Description des responsabilités et des réalisations.</p>
+                            
+                                <h3>Stage d'Observation</h3>
+                                <p>oct. 2018 | LCC CNRS, Toulouse</p>
+                                <p>Durant ce stage d'observation dans un centre de laboratoires en physique et chimie, j'ai pu découvrir ce à quoi ressemblait la vie en entreprise, l'importance de chaque corps de métiers pour la cohésion de l'entreprise et l'importance du travail d'équipe pour les projets. J'ai pu aussi étayer ma curiosité scientifique lors de ce stage d'observation.</p> 
+								<p><strong>Compétences acquises :</strong>travail d'équipe, appréhension, curiosité</p>
                             </li>
                         </ul>
 						<br>
-                        <h2>Éducation</h2>
+                        <h2>Parcours Académique</h2>
                         <ul>
 							<li>
                                 <h3>Sciences du Numérique</h3>
@@ -190,16 +199,26 @@
                                 <p>sept. 2022 - juin 2024 | Lycée Pierre de Fermat, Toulouse</p>
                             </li>
                             <li>
-                                <h3>Baccalauréat Mention Très Bien</h3>
+                                <h3>Baccalauréat, Section Européenne, Mention Très Bien</h3>
                                 <p>sept. 2019 - juin 2022 | Lycée Sainte Marie De Nevers</p>
                             </li>
                         </ul>
 						<br>
-                        <h2>Engagement Civique</h2>
+                        <h2>Projets, Clubs et Associatif</h2>
                         <ul>
+						<li>
 							<h3>Les Cordées de la Réussite</h3>
-                            <li>sept. 2024</li>
+							<p>Le but de cette association est de permettre à des jeunes défavoriser de leur faire découvrir le métier d'ingénieur. Durant ces heures, on apprend à des jeunes de 5ème les bases de la robotique et on construit des liens pour leur montrer que le métier d'ingénieur est accessible à tous</p> 
                             
+                        </li>    
+                        </ul>
+						
+						<ul>
+						<li>
+							<h3>Net7</h3>
+							<p>J'ai participé aux formations de ce club pour apprendre les bases du HTML/CSS. Le club propose des projets utiles pour la vie étudiante et pour s'améliorer.</p> 
+                            
+                        </li> 
                         </ul>
 						<br>
 						<h2>Centres d'intérêts</h2>
@@ -214,40 +233,195 @@
                     <!-- Section en Anglais -->
                     <div class="cv-header hidden" id="cv-en">
                         <div class="cv-photo">
-                            <img src="pictures/your-picture.png" alt="Your Name">
-                        </div>
-                        <div class="cv-info">
-                            <h1>Louis-David Duman</h1>
-                            <p>Your Job Title</p>
-                            <p>Email: your.email@example.com</p>
-                            <p>Phone: +33 6 12 34 56 78</p>
-                        </div>
-                    </div>
+							<img src="pictures/your-picture.png" alt="Your Name">
+						</div>
+						<div class="cv-info">
+							<h1>DUMAN Louis-David</h1>
+							<h2>Student at ENSEEIHT in Computer Sciences</h2>
+							<p><img src="pictures/at-icon.png" alt="@" class="icon">louisdavid.duman@etu.inp-n7.fr</p>
+							<p><img src="pictures/phone-icon.png" alt="phone" class="icon">+33 7 69 40 65 71</p>
+							<p><img src="pictures/location-icon.png" alt="location" class="icon">Toulouse, France</p>
+							<p>
+								<a href="https://www.linkedin.com/in/louis-david-duman-0041172b9/" target="_blank">
+								<img src="pictures/qrcode.png" class ="qrcode" alt="QR Code" width="150" height="150">
+								</a>
+							</p>
+						</div>
+
+						<!-- Language Skills -->
+						<div class="language-skills">
+							<h2>Languages</h2>
+							<div class="language">
+								<span>French</span>
+								<div class="level">
+									<div class="circle filled"></div>
+									<div class="circle filled"></div>
+									<div class="circle filled"></div>
+									<div class="circle filled"></div>
+									<div class="circle filled"></div>
+								</div>
+							</div>
+							<div class="language">
+								<span>English</span>
+								<div class="level">
+									<div class="circle filled"></div>
+									<div class="circle filled"></div>
+									<div class="circle filled"></div>
+									<div class="circle filled"></div>
+									<div class="circle"></div>
+								</div>
+							</div>
+							<p class="language-note">With B2 Cambridge Certificate</p>
+							<div class="language">
+								<span>Spanish</span>
+								<div class="level">
+									<div class="circle filled"></div>
+									<div class="circle filled"></div>
+									<div class="circle filled"></div>
+									<div class="circle"></div>
+									<div class="circle"></div>
+								</div>
+							</div>
+							<div class="language">
+								<span>German</span>
+								<div class="level">
+									<div class="circle filled"></div>
+									<div class="circle"></div>
+									<div class="circle"></div>
+									<div class="circle"></div>
+									<div class="circle"></div>
+								</div>
+							</div>
+						</div>
+						<br>
+						<div class="coding-skills">
+							<h2>Programming Languages</h2>
+							<div class="language">
+								<span>C</span>
+								<div class="level">
+									<div class="circle filled"></div>
+									<div class="circle filled"></div>
+									<div class="circle filled"></div>
+									<div class="circle filled"></div>
+									<div class="circle filled"></div>
+								</div>
+							</div>
+							<div class="language">
+								<span>OCaml</span>
+								<div class="level">
+									<div class="circle filled"></div>
+									<div class="circle filled"></div>
+									<div class="circle filled"></div>
+									<div class="circle filled"></div>
+									<div class="circle filled"></div>
+								</div>
+							</div>
+							<div class="language">
+								<span>Python</span>
+								<div class="level">
+									<div class="circle filled"></div>
+									<div class="circle filled"></div>
+									<div class="circle filled"></div>
+									<div class="circle"></div>
+									<div class="circle"></div>
+								</div>
+							</div>
+							<div class="language">
+								<span>Ada</span>
+								<div class="level">
+									<div class="circle filled"></div>
+									<div class="circle filled"></div>
+									<div class="circle"></div>
+									<div class="circle"></div>
+									<div class="circle"></div>
+								</div>
+							</div>
+							<div class="language">
+								<span>Matlab</span>
+								<div class="level">
+									<div class="circle filled"></div>
+									<div class="circle filled"></div>
+									<div class="circle"></div>
+									<div class="circle"></div>
+									<div class="circle"></div>
+								</div>
+							</div>
+							<div class="language">
+								<span>HTML</span>
+								<div class="level">
+									<div class="circle filled"></div>
+									<div class="circle filled"></div>
+									<div class="circle"></div>
+									<div class="circle"></div>
+									<div class="circle"></div>
+								</div>
+							</div>
+							<div class="language">
+								<span>CSS</span>
+								<div class="level">
+									<div class="circle filled"></div>
+									<div class="circle filled"></div>
+									<div class="circle"></div>
+									<div class="circle"></div>
+									<div class="circle"></div>
+								</div>
+							</div>
+						</div>
+					</div>
                     <div class="cv-content hidden" id="cv-content-en">
-                        <h2>Work Experience</h2>
                         <ul>
-                            <li>
-                                <h3>Job Title - Company</h3>
-                                <p>Dates (month year - month year)</p>
-                                <p>Description of responsibilities and achievements.</p>
-                            </li>
-                        </ul>
+							<li>
+								<p>Currently studying computer science at ENSEEIHT, I am looking for an internship to discover the job of a software developer in order to develop the skills that I have acquired during my studies.</p>
+							</li>
+						</ul>
+						<br>
+						<h2>Internships and Professional Experience</h2>
+						<ul>
+							<li>
+								<h3>Observation Internship</h3>
+								<p>Oct. 2018 | LCC CNRS, Toulouse</p>
+								<p>During this observation internship at a physics and chemistry laboratory center, I was able to discover what life in a company looks like, the importance of each profession for the cohesion of the company, and the significance of teamwork for projects. I was also able to nurture my scientific curiosity during this observation internship.</p>
+								<p><strong>Skills acquired:</strong> teamworking, understanding, curiosity</p>
+							</li>
+						</ul>
+						<br>
+						<h2>Academic Background</h2>
+						<ul>
+							<li>
+								<h3>Computer Sciences</h3>
+								<p>Sept. 2024 - Today | ENSEEIHT, Toulouse</p>
+							</li>
+							<li>
+								<h3>Classe Préparatoire</h3>
+								<p>Sept. 2022 - June 2024 | Lycée Pierre de Fermat, Toulouse</p>
+							</li>
+							<li>
+								<h3>Baccalauréat, European Section, with Distinction</h3>
+								<p>Sept. 2019 - June 2022 | Lycée Sainte Marie De Nevers</p>
+							</li>
+						</ul>
+						<br>
+						<h2>Projects, Clubs, and Associations</h2>
+						<ul>
+							<li>
+								<h3>Les Cordées de la Réussite</h3>
+								<p>The aim of this association is to allow underprivileged youth to discover the engineering profession. During these sessions, we teach seven graders the basics of robotics and build connections to show them that the engineering profession is accessible to everyone.</p>
+							</li>
+						</ul>
 
-                        <h2>Education</h2>
-                        <ul>
-                            <li>
-                                <h3>Degree - Institution</h3>
-                                <p>Dates (month year - month year)</p>
-                            </li>
-                        </ul>
-
-                        <h2>Skills</h2>
-                        <ul>
-                            <li>Skill 1</li>
-                            <li>Skill 2</li>
-                            <li>Skill 3</li>
-                        </ul>
-                    </div>
+						<ul>
+							<li>
+								<h3>Net7</h3>
+								<p>I participated in training sessions of this club to learn the basics of HTML/CSS. The club offers useful projects for student life and for improvement.</p>
+							</li>
+						</ul>
+						<br>
+						<h2>Interests</h2>
+						<ul>
+							<li>Travel, Cultural Discoveries, Reading, Cooking</li>
+							<li>Board Games, Puzzles, Brain Teasers</li>
+						</ul>
+					</div>
                 </div>
             </div>
             <div class="video-section">
@@ -276,7 +450,7 @@
             <p><strong>E-mail</strong>: louisdavid.duman@etu.inp-n7.fr</p>
         </div>
         <div class="footer-section">
-            <a href="https://www.linkedin.com/in/yourprofile" target="_blank">
+            <a href="https://www.linkedin.com/in/louis-david-duman-0041172b9/" target="_blank">
                     <img src="pictures/linkedin.png" alt="LinkedIn" class="linkedin-icon-footer">
                 </a>
         </div>
@@ -285,31 +459,55 @@
     <script>
         let isEnglish = false; // La version française est affichée par défaut
 
-        function toggleLanguage() {
-            const frSection = document.getElementById("cv-fr");
-            const enSection = document.getElementById("cv-en");
-            const frContent = document.getElementById("cv-content-fr");
-            const enContent = document.getElementById("cv-content-en");
-            const button = document.getElementById("language-toggle");
+		function toggleLanguage() {
+			const frSection = document.getElementById("cv-fr");
+			const enSection = document.getElementById("cv-en");
+			const frContent = document.getElementById("cv-content-fr");
+			const enContent = document.getElementById("cv-content-en");
+			const button = document.getElementById("language-toggle");
+			const downloadButton = document.getElementById("download-button"); // Récupérer le bouton de téléchargement
 
-            // Vérifiez quelle section est actuellement affichée et basculez
-            if (isEnglish) {
-                frSection.classList.remove("hidden");
-                frContent.classList.remove("hidden");
-                enSection.classList.add("hidden");
-                enContent.classList.add("hidden");
-                button.textContent = "See English Version"; // Change le texte du bouton
-            } else {
-                frSection.classList.add("hidden");
-                frContent.classList.add("hidden");
-                enSection.classList.remove("hidden");
-                enContent.classList.remove("hidden");
-                button.textContent = "Voir la version française"; // Change le texte du bouton
-            }
+			// Vérifiez quelle section est actuellement affichée et basculez
+			if (isEnglish) {
+				frSection.classList.remove("hidden");
+				frContent.classList.remove("hidden");
+				enSection.classList.add("hidden");
+				enContent.classList.add("hidden");
+				button.textContent = "See English Version"; // Change le texte du bouton de langue
+				downloadButton.textContent = "Télécharger le CV"; // Texte pour le CV en français
+			} else {
+				frSection.classList.add("hidden");
+				frContent.classList.add("hidden");
+				enSection.classList.remove("hidden");
+				enContent.classList.remove("hidden");
+				button.textContent = "Voir la version française"; // Change le texte du bouton de langue
+				downloadButton.textContent = "Download CV"; // Texte pour le CV en anglais
+			}
 
-            // Inversez la variable isEnglish
-            isEnglish = !isEnglish;
-        }
+			// Inversez la variable isEnglish
+			isEnglish = !isEnglish;
+		}
+
+		
+		function downloadCV() {
+			let fileUrl;
+
+			// Définissez l'URL du fichier en fonction de la langue affichée
+			if (isEnglish) {
+				fileUrl = "path/to/english-cv.pdf"; // Remplacez par le chemin du fichier en anglais
+			} else {
+				fileUrl = "documents/cv_fr.pdf"; // Remplacez par le chemin du fichier en français
+			}
+
+			// Créez un élément de lien temporaire pour ouvrir le fichier dans un nouvel onglet
+			const link = document.createElement('a');
+			link.href = fileUrl;
+			link.target = '_blank'; // Ouvre dans un nouvel onglet
+			document.body.appendChild(link);
+			link.click();
+			document.body.removeChild(link);
+		}
+
     </script>
 </body>
 </html>

@@ -192,6 +192,92 @@ section {
     margin-bottom: 1.25rem; /* 20px */
 }
 
+#mobility, #sustainability {
+    text-align: center;
+}
+
+.mobility-content, .engagement-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 1.25rem;
+}
+
+.mobility-content h1, .engagement-content h1{
+	padding-bottom : 0;
+	padding-top : 0.8rem;
+	
+}
+
+.travel-item, .engagement-item {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    gap: 2.5rem;
+    padding: 1rem 0;
+}
+
+/* Styles pour l'image */
+.travel-image, .engagement-image {
+    width: auto;
+    height: 100%; 
+    max-width: 28rem; 
+    border-radius: 0.5rem;
+    object-fit: cover;
+}
+
+/* Styles pour le texte */
+.travel-text, .engagement-text {
+    flex: 1;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+.travel-text h2, .engagement-text h2 {
+	padding-bottom : 1rem;
+}
+/* Voyage pair : texte à gauche, image à droite (pour écrans larges) */
+.travel-item:nth-child(even), .engagement-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* Séparateur entre les voyages */
+.travel-separator, .engagement-separator {
+    width: 80%;
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 1.5rem 0;
+}
+
+/* Mise en page en colonne sur écrans étroits */
+@media (max-width: 768px) {
+    .travel-item, .engagement-item {
+        flex-direction: column; /* Passe en colonne */
+        text-align: center; /* Centre le texte pour un affichage mobile plus propre */
+    }
+    
+    /* Annule l'alternance de flex-direction pour les éléments pairs */
+    .travel-item:nth-child(even), .engagement-item:nth-child(even) {
+        flex-direction: column;
+    }
+    
+    .travel-image, .engagement-image {
+        width: 100%; /* L'image prend la largeur complète */
+        height: auto; /* Ajuste la hauteur automatiquement */
+        max-width: none; /* Supprime la limite de largeur maximale */
+    }
+    
+    .travel-text, .engagement-text {
+        text-align: center; /* Centre le texte pour un meilleur rendu en colonne */
+    }
+}
+
+
+
 /* Sustainability & Civic Engagement */
 .engagement-content .engagement-item {
     margin-bottom: 1.25rem; /* 20px */
@@ -428,21 +514,33 @@ h1 {
     display: none;
 }
 
-.toggle-button {
-    margin-left: 1rem; /* Espacement à gauche du bouton */
-    padding: 0.5rem 1rem; /* Espacement intérieur */
-    background-color: #007bff; /* Couleur d'arrière-plan du bouton */
-    color: white; /* Couleur du texte */
-    border: none; /* Supprime la bordure par défaut */
-    border-radius: 5px; /* Arrondir les coins */
-    cursor: pointer; /* Change le curseur au survol */
-	vertical-align: middle; /* Aligne verticalement le bouton */
-    line-height: normal; /* Assure une hauteur de ligne normale */
-    font-size: 1rem; /* Taille de police */
+.cv-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.toggle-button:hover {
-    background-color: #0056b3; /* Couleur au survol */
+.button-container {
+    display: flex;
+    gap: 0.625rem; /* 10px -> 0.625rem */
+}
+
+.toggle-button,
+.download-button {
+    padding: 0.5rem 0.75rem; /* 8px 12px -> 0.5rem 0.75rem */
+    font-size: 0.875rem; /* 14px -> 0.875rem */
+    color: #ffffff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 0.25rem; /* 4px -> 0.25rem */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Effet au survol */
+.toggle-button:hover,
+.download-button:hover {
+    background-color: #0056b3;
 }
 
 .cv-section h2 {
@@ -461,7 +559,13 @@ h1 {
     }
 }
 
-
+@media (max-width: 768px) {
+    .button-container {
+        flex-direction: column; /* Les boutons passent en colonne */
+        align-items: flex-start; /* Aligne les boutons à gauche */
+        gap: 0.5rem; /* Espacement vertical entre les boutons */
+    }
+}
 /* Compétences en langues */
 .coding-skills, .language-skills {
     display: flex;
