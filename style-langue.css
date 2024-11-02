@@ -42,7 +42,7 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 38rem) { /* 768px */
+@media (max-width: 48rem) { /* 768px */
    
     .career-content {
         flex-direction: column;
