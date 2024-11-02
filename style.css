@@ -152,9 +152,14 @@ section {
 	
 }
 
+.btns {
+	display : flex;
+	justify-content: space-around;
+}
 .cv-btn {
     background-color: #207567;
     color: white;
+
 }
 
 
